@@ -50,7 +50,7 @@ Do the following:
    HINT: look up the Number method
 */
  const value = "1999";
- console.log(String(value));
+ console.log(Number(value));
 
 /*
 Task 1d - Multiply
@@ -78,7 +78,7 @@ Do the following:
 */
 
 function dogYears(age) {
-  returns age * 7;
+  return age * 7;
 }
 console.log(dogYears(24));
 
@@ -129,9 +129,28 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
-}
+function hungryDog(weight, age) {
+  if(age >= 1) {
+    if(weight <= 5) {
+      return weight * .05
+    } else if(weight >= 5 && weight <= 10) {
+      return weight * .04
+    } else if(weight >= 11 && weight <= 15) {
+      return weight * .03
+    } else if(weight > 15) {
+      return weight * .02 
+    }
+    } else if(age < 1) {
+      if(age >= .17 && age <= .33) {
+        return weight * .1
+      } else if(age > .33 && age <= .58) {
+        return weight * .05 
+      } else if(age > .58 && age <= 1) {
+        return weight * .04
+      } 
+    }
+  }
+
 
 
 
@@ -155,9 +174,49 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
+let cMove = '';
+let randomNumber = Math.random();
+if(randomNumber >= .33 && randomNumber <= .66) {
+  cMove = 'rock'
+}
+ if(randomNumber < .33) {
+  cMove = 'scissors'
+} 
+if(randomNumber > .66) {
+  cMove = 'paper'
+}
+function game(user, computer) {
+  let userMove = user.toLowerCase();
+  let comMove = computer.toLowerCase();
+  let win = 'you win!';
+  let tie = "it's a tie";
+  let lose = 'you lose!';
+  if(userMove === 'rock') {
+    if(comMove === 'rock') {
+      return tie;
+    } else if(comMove === 'paper'){
+      return lose;
+    } else {
+      return win;
+    }
+  }  else if(userMove === 'paper') {
+    if(comMove === 'paper') {
+      return tie;
+    } else if(comMove === 'scissors'){
+      return lose;
+    } else {
+      return win;
+    }
+  } else {
+    if(comMove === 'scissors') {
+      return tie;
+    } else if(comMove === 'rock'){
+      return lose;
+    } else {
+      return win;
+    }
+  }
 
-function game(user, computer){
-  /*add your code here*/
 }
 
 
