@@ -231,11 +231,11 @@ Using the miles function below do the following:
 2. Convert the number of kiolmeters received to miles
 3. Return the number of miles
 */
-
-function miles(/*add your code here*/){
-  /*add your code here*/
+let km = 1 
+function miles(km) {
+return km * 0.621371
 }
-
+console.log(miles(2));
 
 
 //Task 5b - Feet to CM
@@ -245,11 +245,11 @@ Using the feet function below do the following:
 2. Convert the number of cm to feet
 3. Return number of feet
 */
-
-function feet(/*add your code here*/){
-  /*add your code here*/
+let cm = 1
+function feet(cm){
+  return cm / 30.48
 }
-
+console.log(feet(5));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -266,10 +266,15 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num) {
+  let song = `${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ${num-= 1} bottles of soda on the wall`;
+return song;
 }
-
+var endNum = 1;
+var num1 = 5
+for(let i = num1; i >= endNum; i--) {
+console.log(annoyingSong(i));
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -286,10 +291,20 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score){
+ if(score >= 90 && score <= 100) {
+  return 'you got an A'
+ } else if(score >= 80 && score <= 89) {
+  return 'you got a B'
+ } else if(score >= 70 && score <= 79) {
+  return 'you got a C'
+ } else if(score >= 60 && score <= 69) {
+  return 'you got a D'
+ } else if(score <= 59) {
+   return 'you got an F'
+ }
 }
-
+console.log(grade(86));
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
